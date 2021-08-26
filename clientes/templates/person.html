@@ -8,7 +8,26 @@
    
 
 {% block main %}
-
+    <div class="row">
+        <div class="col-12">
+            <form class="row g-3">
+               
+                <div class="col-auto">
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Informe o nome">
+                </div>
+                <div class="col-auto">
+                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Informe o sobrenome">
+                </div>
+                <div class="col-auto">
+               <!--    <input type="checkbox" name="meu-checkbox">
+                  <input type="radio" name="meu-radio"> -->
+                  <button type="submit" class="btn btn-primary mb-3">Pesquisar</button>
+                </div>
+              </form>
+        </div>
+        
+       
+    </div>
     <div class="row">
         <div class="col">
 
@@ -18,7 +37,7 @@
             <ul class="list-group">
                 {% for person in persons %}
                     <li class="list-group-item">
-                        <a href="{% url 'person_update' person.id %}">{{ person.first_name}}</a>
+                        <a href="{% url 'person_update' person.id %}">{{ person.nome_completo}}</a>
                         <a href="{% url 'person_delete' person.id %}" class="trash-item">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </a>
